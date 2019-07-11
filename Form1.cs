@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using System.Net;
 using Newtonsoft.Json;
 using System.IO;
-
+using System.Data;
 
 namespace RuneTrackerGUI
 {
@@ -180,9 +180,8 @@ namespace RuneTrackerGUI
             cbLevelReq.AppendText("- " + AttStr + " Attack or Strength levels" + Environment.NewLine);
             cbLevelReq.AppendText("- " + Mage + " Magic levels" + Environment.NewLine);
             cbLevelReq.AppendText("- " + Range + " Ranged levels" + Environment.NewLine);
-
         }
-        
+
         private void SearchClan_Click(object sender, EventArgs e)
         {
             // "http://services.runescape.com/m=clan-hiscores/members_lite.ws?clanName=" + clanname
@@ -191,14 +190,28 @@ namespace RuneTrackerGUI
 
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://services.runescape.com/m=clan-hiscores/members_lite.ws?clanName=" + clanname);
             HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
+            StreamReader reader = new StreamReader(resp.GetResponseStream());
 
-            StreamReader sr = new StreamReader(resp.GetResponseStream());
-            string results = sr.ReadToEnd();
-        }
+            string[] columnname = reader.ReadLine().Split(',');
+            DataTable dt = new DataTable();
 
-        private void Activities_TextChanged(object sender, EventArgs e)
-        {
-
+            foreach (string c in columnname)
+            {
+                dt.Columns.Add(c);
+            }
+            string newline;
+            while ((newline = reader.ReadLine()) != null)
+            {
+                DataRow dr = dt.NewRow();
+                string[] values = newline.Split(',');
+                for (int i = 0; i < values.Length; i++)
+                {
+                    dr[i] = values[i];
+                }
+                dt.Rows.Add(dr);
+            }
+            reader.Close();
+            csvTable.DataSource = dt;
         }
     }
 }

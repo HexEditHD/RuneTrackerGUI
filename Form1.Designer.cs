@@ -67,6 +67,7 @@
             this.searchPlayer = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.activities = new System.Windows.Forms.RichTextBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.csvTable)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -76,6 +77,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label15);
             this.tabPage1.Controls.Add(this.csvTable);
             this.tabPage1.Controls.Add(this.clan);
             this.tabPage1.Controls.Add(this.searchClan);
@@ -98,14 +100,14 @@
             // 
             // clan
             // 
-            this.clan.Location = new System.Drawing.Point(160, 6);
+            this.clan.Location = new System.Drawing.Point(108, 6);
             this.clan.Name = "clan";
             this.clan.Size = new System.Drawing.Size(100, 20);
             this.clan.TabIndex = 0;
             // 
             // searchClan
             // 
-            this.searchClan.Location = new System.Drawing.Point(311, 4);
+            this.searchClan.Location = new System.Drawing.Point(214, 4);
             this.searchClan.Name = "searchClan";
             this.searchClan.Size = new System.Drawing.Size(75, 23);
             this.searchClan.TabIndex = 1;
@@ -446,6 +448,15 @@
             this.activities.TabIndex = 11;
             this.activities.Text = "";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 9);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(96, 13);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "Enter a clan name:";
+            // 
             // RuneTracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -509,6 +520,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.DataGridView csvTable;
         private System.Windows.Forms.RichTextBox activities;
+        private System.Windows.Forms.Label label15;
     }
 }
 
