@@ -183,8 +183,6 @@ namespace RuneTrackerGUI
 
         private void SearchClan_Click(object sender, EventArgs e)
         {
-            // "http://services.runescape.com/m=clan-hiscores/members_lite.ws?clanName=" + clanname
-
             string clanname = clan.Text;
 
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create("http://services.runescape.com/m=clan-hiscores/members_lite.ws?clanName=" + clanname);
