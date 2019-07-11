@@ -118,9 +118,9 @@ namespace RuneTrackerGUI
             double combatlvl = ((Math.Max(attstr, Math.Max(2 * magic, 2 * ranged)) * 13 / 10) + defence + constitution + Math.Floor(prayer / 2) + Math.Floor(summoning / 2)) / 4;
             double HpDef = Math.Ceiling((1 - (combatlvl % 1)) * 4);
             double PraySumm = Math.Ceiling((1 - (combatlvl % 1)) * 8);
-            double AttStr = 0;
-            double Mage = 0;
-            double Range = 0;
+            double AttStr;
+            double Mage;
+            double Range;
 
             // Setting what the required prayer and summoning
             double reqPrayer = 0;
