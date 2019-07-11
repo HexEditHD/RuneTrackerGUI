@@ -56,7 +56,6 @@
             this.searchCB = new System.Windows.Forms.Button();
             this.PlayerDetails = new System.Windows.Forms.TabPage();
             this.label6 = new System.Windows.Forms.Label();
-            this.activities = new System.Windows.Forms.TextBox();
             this.cbLvl = new System.Windows.Forms.TextBox();
             this.skillLvl = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.TextBox();
@@ -67,6 +66,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.searchPlayer = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.activities = new System.Windows.Forms.RichTextBox();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.csvTable)).BeginInit();
             this.tabPage2.SuspendLayout();
@@ -319,8 +319,8 @@
             // 
             // PlayerDetails
             // 
-            this.PlayerDetails.Controls.Add(this.label6);
             this.PlayerDetails.Controls.Add(this.activities);
+            this.PlayerDetails.Controls.Add(this.label6);
             this.PlayerDetails.Controls.Add(this.cbLvl);
             this.PlayerDetails.Controls.Add(this.skillLvl);
             this.PlayerDetails.Controls.Add(this.name);
@@ -346,16 +346,6 @@
             this.label6.Size = new System.Drawing.Size(90, 13);
             this.label6.TabIndex = 10;
             this.label6.Text = "Recent Activities:";
-            // 
-            // activities
-            // 
-            this.activities.Location = new System.Drawing.Point(109, 110);
-            this.activities.Multiline = true;
-            this.activities.Name = "activities";
-            this.activities.ReadOnly = true;
-            this.activities.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.activities.Size = new System.Drawing.Size(280, 244);
-            this.activities.TabIndex = 5;
             // 
             // cbLvl
             // 
@@ -445,6 +435,17 @@
             this.tabControl1.Size = new System.Drawing.Size(443, 394);
             this.tabControl1.TabIndex = 2;
             // 
+            // activities
+            // 
+            this.activities.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.activities.Location = new System.Drawing.Point(109, 113);
+            this.activities.Name = "activities";
+            this.activities.ReadOnly = true;
+            this.activities.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.activities.Size = new System.Drawing.Size(280, 244);
+            this.activities.TabIndex = 11;
+            this.activities.Text = "";
+            // 
             // RuneTracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -496,7 +497,6 @@
         private System.Windows.Forms.Button searchCB;
         private System.Windows.Forms.TabPage PlayerDetails;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox activities;
         private System.Windows.Forms.TextBox cbLvl;
         private System.Windows.Forms.TextBox skillLvl;
         private System.Windows.Forms.TextBox name;
@@ -508,6 +508,7 @@
         private System.Windows.Forms.Button searchPlayer;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.DataGridView csvTable;
+        private System.Windows.Forms.RichTextBox activities;
     }
 }
 

@@ -3,20 +3,19 @@ using System.Windows.Forms;
 using System.Net;
 using Newtonsoft.Json;
 using System.IO;
-using System.Collections.Generic;
 
 
 namespace RuneTrackerGUI
 {
     public partial class RuneTracker : Form
     {
+
         public RuneTracker() => InitializeComponent();
 
         private void SearchPlayer_Click(object sender, EventArgs e)
         {
             WebClient client = new WebClient();
-            string username = "";
-            username = user.Text;
+            string username = user.Text;
             string runedata = client.DownloadString("https://apps.runescape.com/runemetrics/profile/profile?user=" + username + "&activities=20");
 
             dynamic dobj = JsonConvert.DeserializeObject<dynamic>(runedata);
@@ -25,21 +24,28 @@ namespace RuneTrackerGUI
             string pskillLvl = dobj["totalskill"].ToString();
             string pcbLvl = dobj["combatlevel"].ToString();
 
+            name.Text = pname;
+            skillLvl.Text = pskillLvl;
+            cbLvl.Text = pcbLvl;
+
+            activities.Clear();
             foreach (var item in dobj["activities"])
             {
                 string pdate = item.date;
                 string pdetails = item.details;
                 string ptext = item.text;
 
+                int pos = activities.SelectionStart;
+                
+
                 activities.AppendText(pdate + Environment.NewLine);
                 activities.AppendText(pdetails + Environment.NewLine);
                 activities.AppendText(ptext + Environment.NewLine);
                 activities.AppendText(Environment.NewLine);
-            }
 
-            name.Text = pname;
-            skillLvl.Text = pskillLvl;
-            cbLvl.Text = pcbLvl;
+                activities.SelectionStart = pos;
+
+            }
         }
 
         private void SearchCB_Click(object sender, EventArgs e)
@@ -188,22 +194,11 @@ namespace RuneTrackerGUI
 
             StreamReader sr = new StreamReader(resp.GetResponseStream());
             string results = sr.ReadToEnd();
-            sr.Close();
+        }
 
-            List<string> splitted = new List<string>();
-            string[] tempStr;
+        private void Activities_TextChanged(object sender, EventArgs e)
+        {
 
-            tempStr = results.Split(',');
-
-            foreach (string item in tempStr)
-            {
-                if (!string.IsNullOrWhiteSpace(item))
-                {
-                    splitted.Add(item);
-                }
-            }
-            csvTable.DataSource = results;
-            
         }
     }
 }
