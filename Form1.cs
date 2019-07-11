@@ -37,7 +37,6 @@ namespace RuneTrackerGUI
 
                 int pos = activities.SelectionStart;
                 
-
                 activities.AppendText(pdate + Environment.NewLine);
                 activities.AppendText(pdetails + Environment.NewLine);
                 activities.AppendText(ptext + Environment.NewLine);

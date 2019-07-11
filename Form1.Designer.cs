@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.clanInfo = new System.Windows.Forms.TabPage();
+            this.label15 = new System.Windows.Forms.Label();
             this.csvTable = new System.Windows.Forms.DataGridView();
             this.clan = new System.Windows.Forms.TextBox();
             this.searchClan = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cbTabPage = new System.Windows.Forms.TabPage();
             this.cbLevelReq = new System.Windows.Forms.TextBox();
             this.summ = new System.Windows.Forms.TextBox();
             this.pray = new System.Windows.Forms.TextBox();
@@ -55,6 +56,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.searchCB = new System.Windows.Forms.Button();
             this.PlayerDetails = new System.Windows.Forms.TabPage();
+            this.activities = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cbLvl = new System.Windows.Forms.TextBox();
             this.skillLvl = new System.Windows.Forms.TextBox();
@@ -65,36 +67,48 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.searchPlayer = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.activities = new System.Windows.Forms.RichTextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.tabPage1.SuspendLayout();
+            this.runeTrackerTabs = new System.Windows.Forms.TabControl();
+            this.clanInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.csvTable)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            this.cbTabPage.SuspendLayout();
             this.PlayerDetails.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.runeTrackerTabs.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabPage1
+            // clanInfo
             // 
-            this.tabPage1.Controls.Add(this.label15);
-            this.tabPage1.Controls.Add(this.csvTable);
-            this.tabPage1.Controls.Add(this.clan);
-            this.tabPage1.Controls.Add(this.searchClan);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(435, 368);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "Clan Information";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.clanInfo.Controls.Add(this.label15);
+            this.clanInfo.Controls.Add(this.csvTable);
+            this.clanInfo.Controls.Add(this.clan);
+            this.clanInfo.Controls.Add(this.searchClan);
+            this.clanInfo.Location = new System.Drawing.Point(4, 22);
+            this.clanInfo.Name = "clanInfo";
+            this.clanInfo.Padding = new System.Windows.Forms.Padding(3);
+            this.clanInfo.Size = new System.Drawing.Size(435, 368);
+            this.clanInfo.TabIndex = 2;
+            this.clanInfo.Text = "Clan Information";
+            this.clanInfo.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 9);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(96, 13);
+            this.label15.TabIndex = 4;
+            this.label15.Text = "Enter a clan name:";
             // 
             // csvTable
             // 
+            this.csvTable.AllowUserToAddRows = false;
             this.csvTable.AllowUserToOrderColumns = true;
+            this.csvTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.csvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.csvTable.Location = new System.Drawing.Point(6, 33);
             this.csvTable.Name = "csvTable";
+            this.csvTable.ReadOnly = true;
+            this.csvTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.csvTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.csvTable.Size = new System.Drawing.Size(423, 329);
             this.csvTable.TabIndex = 3;
             // 
@@ -115,36 +129,36 @@
             this.searchClan.UseVisualStyleBackColor = true;
             this.searchClan.Click += new System.EventHandler(this.SearchClan_Click);
             // 
-            // tabPage2
+            // cbTabPage
             // 
-            this.tabPage2.Controls.Add(this.cbLevelReq);
-            this.tabPage2.Controls.Add(this.summ);
-            this.tabPage2.Controls.Add(this.pray);
-            this.tabPage2.Controls.Add(this.consti);
-            this.tabPage2.Controls.Add(this.att);
-            this.tabPage2.Controls.Add(this.str);
-            this.tabPage2.Controls.Add(this.rng);
-            this.tabPage2.Controls.Add(this.mag);
-            this.tabPage2.Controls.Add(this.def);
-            this.tabPage2.Controls.Add(this.usernameCB);
-            this.tabPage2.Controls.Add(this.submitCB);
-            this.tabPage2.Controls.Add(this.label14);
-            this.tabPage2.Controls.Add(this.label13);
-            this.tabPage2.Controls.Add(this.label12);
-            this.tabPage2.Controls.Add(this.label11);
-            this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.searchCB);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(435, 368);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Combat Level Calculator";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.cbTabPage.Controls.Add(this.cbLevelReq);
+            this.cbTabPage.Controls.Add(this.summ);
+            this.cbTabPage.Controls.Add(this.pray);
+            this.cbTabPage.Controls.Add(this.consti);
+            this.cbTabPage.Controls.Add(this.att);
+            this.cbTabPage.Controls.Add(this.str);
+            this.cbTabPage.Controls.Add(this.rng);
+            this.cbTabPage.Controls.Add(this.mag);
+            this.cbTabPage.Controls.Add(this.def);
+            this.cbTabPage.Controls.Add(this.usernameCB);
+            this.cbTabPage.Controls.Add(this.submitCB);
+            this.cbTabPage.Controls.Add(this.label14);
+            this.cbTabPage.Controls.Add(this.label13);
+            this.cbTabPage.Controls.Add(this.label12);
+            this.cbTabPage.Controls.Add(this.label11);
+            this.cbTabPage.Controls.Add(this.label10);
+            this.cbTabPage.Controls.Add(this.label9);
+            this.cbTabPage.Controls.Add(this.label8);
+            this.cbTabPage.Controls.Add(this.label5);
+            this.cbTabPage.Controls.Add(this.label7);
+            this.cbTabPage.Controls.Add(this.searchCB);
+            this.cbTabPage.Location = new System.Drawing.Point(4, 22);
+            this.cbTabPage.Name = "cbTabPage";
+            this.cbTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.cbTabPage.Size = new System.Drawing.Size(435, 368);
+            this.cbTabPage.TabIndex = 1;
+            this.cbTabPage.Text = "Combat Level Calculator";
+            this.cbTabPage.UseVisualStyleBackColor = true;
             // 
             // cbLevelReq
             // 
@@ -340,6 +354,17 @@
             this.PlayerDetails.Text = "Player Details";
             this.PlayerDetails.UseVisualStyleBackColor = true;
             // 
+            // activities
+            // 
+            this.activities.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.activities.Location = new System.Drawing.Point(109, 113);
+            this.activities.Name = "activities";
+            this.activities.ReadOnly = true;
+            this.activities.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.activities.Size = new System.Drawing.Size(280, 244);
+            this.activities.TabIndex = 11;
+            this.activities.Text = "";
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -426,65 +451,45 @@
             this.searchPlayer.UseVisualStyleBackColor = true;
             this.searchPlayer.Click += new System.EventHandler(this.SearchPlayer_Click);
             // 
-            // tabControl1
+            // runeTrackerTabs
             // 
-            this.tabControl1.Controls.Add(this.PlayerDetails);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(11, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(443, 394);
-            this.tabControl1.TabIndex = 2;
-            // 
-            // activities
-            // 
-            this.activities.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.activities.Location = new System.Drawing.Point(109, 113);
-            this.activities.Name = "activities";
-            this.activities.ReadOnly = true;
-            this.activities.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.activities.Size = new System.Drawing.Size(280, 244);
-            this.activities.TabIndex = 11;
-            this.activities.Text = "";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 9);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(96, 13);
-            this.label15.TabIndex = 4;
-            this.label15.Text = "Enter a clan name:";
+            this.runeTrackerTabs.Controls.Add(this.PlayerDetails);
+            this.runeTrackerTabs.Controls.Add(this.cbTabPage);
+            this.runeTrackerTabs.Controls.Add(this.clanInfo);
+            this.runeTrackerTabs.Location = new System.Drawing.Point(11, 12);
+            this.runeTrackerTabs.Name = "runeTrackerTabs";
+            this.runeTrackerTabs.SelectedIndex = 0;
+            this.runeTrackerTabs.Size = new System.Drawing.Size(443, 394);
+            this.runeTrackerTabs.TabIndex = 2;
             // 
             // RuneTracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(467, 415);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.runeTrackerTabs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "RuneTracker";
             this.Text = "RuneTracker";
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.clanInfo.ResumeLayout(false);
+            this.clanInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.csvTable)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.cbTabPage.ResumeLayout(false);
+            this.cbTabPage.PerformLayout();
             this.PlayerDetails.ResumeLayout(false);
             this.PlayerDetails.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.runeTrackerTabs.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage clanInfo;
         private System.Windows.Forms.TextBox clan;
         private System.Windows.Forms.Button searchClan;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage cbTabPage;
         private System.Windows.Forms.TextBox cbLevelReq;
         private System.Windows.Forms.TextBox summ;
         private System.Windows.Forms.TextBox pray;
@@ -517,7 +522,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button searchPlayer;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl runeTrackerTabs;
         private System.Windows.Forms.DataGridView csvTable;
         private System.Windows.Forms.RichTextBox activities;
         private System.Windows.Forms.Label label15;

@@ -12,3 +12,4 @@ C:\Users\Fayez\source\repos\RuneTrackerGUI\obj\Debug\RuneTrackerGUI.csproj.CoreC
 C:\Users\Fayez\source\repos\RuneTrackerGUI\obj\Debug\RuneTrackerGUI.csproj.CopyComplete
 C:\Users\Fayez\source\repos\RuneTrackerGUI\obj\Debug\RuneTrackerGUI.exe
 C:\Users\Fayez\source\repos\RuneTrackerGUI\obj\Debug\RuneTrackerGUI.pdb
+C:\Users\Fayez\source\repos\RuneTrackerGUI\obj\Debug\RuneTrackerGUI.csprojAssemblyReference.cache
