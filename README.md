@@ -1,5 +1,4 @@
 # RuneTrackerGUI
-================
 
 A GUI-based RuneScape tracker that can display player information, clan information and a combat level calculator based on the web version provided [here](https://runescape.wiki/w/Calculator:Combat_level).
 
