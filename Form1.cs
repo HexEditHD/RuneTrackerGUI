@@ -4,11 +4,8 @@ using System.Net;
 using Newtonsoft.Json;
 using System.IO;
 using System.Data;
-using System.Collections.Generic;
-using System.ComponentModel;
 using Newtonsoft.Json.Linq;
-using System.Linq;
-using Microsoft.VisualBasic.ApplicationServices;
+using System.Collections.Generic;
 
 namespace RuneTrackerGUI
 {
@@ -19,9 +16,9 @@ namespace RuneTrackerGUI
 
         private void SearchPlayer_Click(object sender, EventArgs e)
         {
-            WebClient client = new WebClient();
             string username = user.Text;
-            string runedata = client.DownloadString("https://apps.runescape.com/runemetrics/profile/profile?user=" + username + "&activities=20");
+
+            string runedata = (new WebClient()).DownloadString("https://apps.runescape.com/runemetrics/profile/profile?user=" + username + "&activities=20");
 
             dynamic dobj = JsonConvert.DeserializeObject<dynamic>(runedata);
 
@@ -216,10 +213,73 @@ namespace RuneTrackerGUI
             csvTable.DataSource = dt;
         }
 
+       
         private void SearchQC_Click(object sender, EventArgs e)
         {
             string username = quest.Text;
             string questList = (new WebClient()).DownloadString("https://apps.runescape.com/runemetrics/quests?user=" + username);
+
+            dynamic dobj = JsonConvert.DeserializeObject<dynamic>(questList);
+
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Title", typeof(string));
+            dt.Columns.Add("Status", typeof(string));
+            dt.Columns.Add("Difficulty", typeof(string));
+            dt.Columns.Add("Members", typeof(string));
+            dt.Columns.Add("Quest Points", typeof(int));
+            dt.Columns.Add("Requirements Met", typeof(string));
+            foreach (var item in dobj["quests"])
+            {
+                if (item.members == "True")
+                    item.members = "Yes";
+                else if (item.members == "False")
+                    item.members = "No";
+
+                if (item.userEligible == "True")
+                    item.userEligible = "Yes";
+                else if (item.userEligible == "False")
+                    item.userEligible = "No";
+
+                if (item.difficulty == 0)
+                    item.difficulty = "Novice";
+                else if (item.difficulty == 1)
+                    item.difficulty = "Intermediate";
+                else if (item.difficulty == 2)
+                    item.difficulty = "Experienced";
+                else if (item.difficulty == 3)
+                    item.difficulty = "Master";
+                else if (item.difficulty == 4)
+                    item.difficulty = "Grandmaster";
+                else if (item.difficulty == 250)
+                    item.difficulty = "Special";
+
+
+
+                dt.Rows.Add(item.title, item.status, item.difficulty, item.members, item.questPoints, item.userEligible);
+            }
+            questTable.DataSource = dt;
+            //foreach (var item in dobj["quests"])
+            //{
+            //    string qTitle = item.title;
+            //    string qStatus = item.status;
+            //    string qDifficulty = item.difficulty;
+            //    string qMembers = item.members;
+            //    string qQuestPoints = item.questPoints;
+            //    string qUserEligible = item.userEligible;
+
+            //    int pos = questBox.SelectionStart;
+
+            //    questBox.AppendText("Title: " + qTitle + Environment.NewLine);
+            //    questBox.AppendText("Status: " + qStatus + Environment.NewLine);
+            //    questBox.AppendText("Difficulty: " + qDifficulty + Environment.NewLine);
+            //    questBox.AppendText("Members: " + qMembers + Environment.NewLine);
+            //    questBox.AppendText("Quest Points: " + qQuestPoints + Environment.NewLine);
+            //    questBox.AppendText("Eligible: " + qUserEligible + Environment.NewLine);
+            //    questBox.AppendText(Environment.NewLine);
+
+            //    questBox.SelectionStart = pos;
+
+            //}
         }
     }
 }
