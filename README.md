@@ -1,4 +1,4 @@
-RuneTrackerGUI
+# RuneTrackerGUI
 
 A GUI-based RuneScape tracker that can display player information, clan information and a combat level calculator based on the web version provided [here](https://runescape.wiki/w/Calculator:Combat_level).
 
@@ -35,4 +35,4 @@ You can search for a clans name and it will output the folowing in a table:
 - Total XP
 - Number of Kills
 
-The binary can be found [here](https://github.com/HexEditHD/RuneTrackerGUI/blob/master/final/RuneTracker.exe)
+The binary can be found [here](https://github.com/HexEditHD/RuneTrackerGUI/blob/master/final/RuneTracker.exe).
