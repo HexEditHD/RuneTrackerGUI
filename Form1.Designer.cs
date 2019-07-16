@@ -68,11 +68,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.searchPlayer = new System.Windows.Forms.Button();
             this.runeTrackerTabs = new System.Windows.Forms.TabControl();
+            this.questChecker = new System.Windows.Forms.TabPage();
+            this.label16 = new System.Windows.Forms.Label();
+            this.questTable = new System.Windows.Forms.DataGridView();
+            this.quest = new System.Windows.Forms.TextBox();
+            this.searchQC = new System.Windows.Forms.Button();
             this.clanInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.csvTable)).BeginInit();
             this.cbTabPage.SuspendLayout();
             this.PlayerDetails.SuspendLayout();
             this.runeTrackerTabs.SuspendLayout();
+            this.questChecker.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.questTable)).BeginInit();
             this.SuspendLayout();
             // 
             // clanInfo
@@ -81,10 +88,11 @@
             this.clanInfo.Controls.Add(this.csvTable);
             this.clanInfo.Controls.Add(this.clan);
             this.clanInfo.Controls.Add(this.searchClan);
-            this.clanInfo.Location = new System.Drawing.Point(4, 22);
+            this.clanInfo.Location = new System.Drawing.Point(4, 29);
+            this.clanInfo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.clanInfo.Name = "clanInfo";
-            this.clanInfo.Padding = new System.Windows.Forms.Padding(3);
-            this.clanInfo.Size = new System.Drawing.Size(435, 368);
+            this.clanInfo.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.clanInfo.Size = new System.Drawing.Size(656, 573);
             this.clanInfo.TabIndex = 2;
             this.clanInfo.Text = "Clan Information";
             this.clanInfo.UseVisualStyleBackColor = true;
@@ -92,9 +100,10 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 9);
+            this.label15.Location = new System.Drawing.Point(9, 14);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(96, 13);
+            this.label15.Size = new System.Drawing.Size(142, 20);
             this.label15.TabIndex = 4;
             this.label15.Text = "Enter a clan name:";
             // 
@@ -104,26 +113,30 @@
             this.csvTable.AllowUserToOrderColumns = true;
             this.csvTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.csvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.csvTable.Location = new System.Drawing.Point(6, 33);
+            this.csvTable.Location = new System.Drawing.Point(8, 51);
+            this.csvTable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.csvTable.Name = "csvTable";
             this.csvTable.ReadOnly = true;
+            this.csvTable.RowHeadersWidth = 62;
             this.csvTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.csvTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.csvTable.Size = new System.Drawing.Size(423, 329);
+            this.csvTable.Size = new System.Drawing.Size(640, 512);
             this.csvTable.TabIndex = 3;
             // 
             // clan
             // 
-            this.clan.Location = new System.Drawing.Point(108, 6);
+            this.clan.Location = new System.Drawing.Point(162, 9);
+            this.clan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.clan.Name = "clan";
-            this.clan.Size = new System.Drawing.Size(100, 20);
+            this.clan.Size = new System.Drawing.Size(148, 26);
             this.clan.TabIndex = 0;
             // 
             // searchClan
             // 
-            this.searchClan.Location = new System.Drawing.Point(214, 4);
+            this.searchClan.Location = new System.Drawing.Point(322, 5);
+            this.searchClan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.searchClan.Name = "searchClan";
-            this.searchClan.Size = new System.Drawing.Size(75, 23);
+            this.searchClan.Size = new System.Drawing.Size(112, 35);
             this.searchClan.TabIndex = 1;
             this.searchClan.Text = "Search";
             this.searchClan.UseVisualStyleBackColor = true;
@@ -152,91 +165,103 @@
             this.cbTabPage.Controls.Add(this.label5);
             this.cbTabPage.Controls.Add(this.label7);
             this.cbTabPage.Controls.Add(this.searchCB);
-            this.cbTabPage.Location = new System.Drawing.Point(4, 22);
+            this.cbTabPage.Location = new System.Drawing.Point(4, 29);
+            this.cbTabPage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbTabPage.Name = "cbTabPage";
-            this.cbTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.cbTabPage.Size = new System.Drawing.Size(435, 368);
+            this.cbTabPage.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbTabPage.Size = new System.Drawing.Size(656, 573);
             this.cbTabPage.TabIndex = 1;
             this.cbTabPage.Text = "Combat Level Calculator";
             this.cbTabPage.UseVisualStyleBackColor = true;
             // 
             // cbLevelReq
             // 
-            this.cbLevelReq.Location = new System.Drawing.Point(215, 58);
+            this.cbLevelReq.Location = new System.Drawing.Point(322, 89);
+            this.cbLevelReq.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbLevelReq.Multiline = true;
             this.cbLevelReq.Name = "cbLevelReq";
             this.cbLevelReq.ReadOnly = true;
-            this.cbLevelReq.Size = new System.Drawing.Size(214, 176);
+            this.cbLevelReq.Size = new System.Drawing.Size(319, 269);
             this.cbLevelReq.TabIndex = 27;
             // 
             // summ
             // 
-            this.summ.Location = new System.Drawing.Point(109, 214);
+            this.summ.Location = new System.Drawing.Point(164, 329);
+            this.summ.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.summ.Name = "summ";
-            this.summ.Size = new System.Drawing.Size(100, 20);
+            this.summ.Size = new System.Drawing.Size(148, 26);
             this.summ.TabIndex = 9;
             // 
             // pray
             // 
-            this.pray.Location = new System.Drawing.Point(109, 188);
+            this.pray.Location = new System.Drawing.Point(164, 289);
+            this.pray.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pray.Name = "pray";
-            this.pray.Size = new System.Drawing.Size(100, 20);
+            this.pray.Size = new System.Drawing.Size(148, 26);
             this.pray.TabIndex = 8;
             // 
             // consti
             // 
-            this.consti.Location = new System.Drawing.Point(109, 162);
+            this.consti.Location = new System.Drawing.Point(164, 249);
+            this.consti.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.consti.Name = "consti";
-            this.consti.Size = new System.Drawing.Size(100, 20);
+            this.consti.Size = new System.Drawing.Size(148, 26);
             this.consti.TabIndex = 7;
             // 
             // att
             // 
-            this.att.Location = new System.Drawing.Point(109, 32);
+            this.att.Location = new System.Drawing.Point(164, 49);
+            this.att.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.att.Name = "att";
-            this.att.Size = new System.Drawing.Size(100, 20);
+            this.att.Size = new System.Drawing.Size(148, 26);
             this.att.TabIndex = 2;
             // 
             // str
             // 
-            this.str.Location = new System.Drawing.Point(109, 58);
+            this.str.Location = new System.Drawing.Point(164, 89);
+            this.str.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.str.Name = "str";
-            this.str.Size = new System.Drawing.Size(100, 20);
+            this.str.Size = new System.Drawing.Size(148, 26);
             this.str.TabIndex = 3;
             // 
             // rng
             // 
-            this.rng.Location = new System.Drawing.Point(109, 84);
+            this.rng.Location = new System.Drawing.Point(164, 129);
+            this.rng.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rng.Name = "rng";
-            this.rng.Size = new System.Drawing.Size(100, 20);
+            this.rng.Size = new System.Drawing.Size(148, 26);
             this.rng.TabIndex = 4;
             // 
             // mag
             // 
-            this.mag.Location = new System.Drawing.Point(109, 110);
+            this.mag.Location = new System.Drawing.Point(164, 169);
+            this.mag.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.mag.Name = "mag";
-            this.mag.Size = new System.Drawing.Size(100, 20);
+            this.mag.Size = new System.Drawing.Size(148, 26);
             this.mag.TabIndex = 5;
             // 
             // def
             // 
-            this.def.Location = new System.Drawing.Point(109, 136);
+            this.def.Location = new System.Drawing.Point(164, 209);
+            this.def.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.def.Name = "def";
-            this.def.Size = new System.Drawing.Size(100, 20);
+            this.def.Size = new System.Drawing.Size(148, 26);
             this.def.TabIndex = 6;
             // 
             // usernameCB
             // 
-            this.usernameCB.Location = new System.Drawing.Point(109, 6);
+            this.usernameCB.Location = new System.Drawing.Point(164, 9);
+            this.usernameCB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.usernameCB.Name = "usernameCB";
-            this.usernameCB.Size = new System.Drawing.Size(100, 20);
+            this.usernameCB.Size = new System.Drawing.Size(148, 26);
             this.usernameCB.TabIndex = 0;
             // 
             // submitCB
             // 
-            this.submitCB.Location = new System.Drawing.Point(215, 30);
+            this.submitCB.Location = new System.Drawing.Point(322, 46);
+            this.submitCB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.submitCB.Name = "submitCB";
-            this.submitCB.Size = new System.Drawing.Size(75, 23);
+            this.submitCB.Size = new System.Drawing.Size(112, 35);
             this.submitCB.TabIndex = 10;
             this.submitCB.Text = "Submit";
             this.submitCB.UseVisualStyleBackColor = true;
@@ -245,89 +270,99 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(10, 217);
+            this.label14.Location = new System.Drawing.Point(15, 334);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(94, 13);
+            this.label14.Size = new System.Drawing.Size(139, 20);
             this.label14.TabIndex = 24;
             this.label14.Text = "Summoning Level:";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(33, 191);
+            this.label13.Location = new System.Drawing.Point(50, 294);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(69, 13);
+            this.label13.Size = new System.Drawing.Size(99, 20);
             this.label13.TabIndex = 23;
             this.label13.Text = "Prayer Level:";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(26, 87);
+            this.label12.Location = new System.Drawing.Point(39, 134);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(77, 13);
+            this.label12.Size = new System.Drawing.Size(111, 20);
             this.label12.TabIndex = 22;
             this.label12.Text = "Ranged Level:";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(37, 113);
+            this.label11.Location = new System.Drawing.Point(56, 174);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(66, 13);
+            this.label11.Size = new System.Drawing.Size(94, 20);
             this.label11.TabIndex = 21;
             this.label11.Text = "Mage Level:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(23, 139);
+            this.label10.Location = new System.Drawing.Point(34, 214);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(80, 13);
+            this.label10.Size = new System.Drawing.Size(115, 20);
             this.label10.TabIndex = 20;
             this.label10.Text = "Defence Level:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 165);
+            this.label9.Location = new System.Drawing.Point(14, 254);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 13);
+            this.label9.Size = new System.Drawing.Size(139, 20);
             this.label9.TabIndex = 19;
             this.label9.Text = "Constitution Level:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(24, 61);
+            this.label8.Location = new System.Drawing.Point(36, 94);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 13);
+            this.label8.Size = new System.Drawing.Size(116, 20);
             this.label8.TabIndex = 18;
             this.label8.Text = "Strength Level:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(33, 35);
+            this.label5.Location = new System.Drawing.Point(50, 54);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 13);
+            this.label5.Size = new System.Drawing.Size(100, 20);
             this.label5.TabIndex = 17;
             this.label5.Text = "Attack Level:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(10, 9);
+            this.label7.Location = new System.Drawing.Point(15, 14);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(93, 13);
+            this.label7.Size = new System.Drawing.Size(140, 20);
             this.label7.TabIndex = 8;
             this.label7.Text = "Enter a username:";
             // 
             // searchCB
             // 
-            this.searchCB.Location = new System.Drawing.Point(215, 3);
+            this.searchCB.Location = new System.Drawing.Point(322, 5);
+            this.searchCB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.searchCB.Name = "searchCB";
-            this.searchCB.Size = new System.Drawing.Size(75, 23);
+            this.searchCB.Size = new System.Drawing.Size(112, 35);
             this.searchCB.TabIndex = 1;
             this.searchCB.Text = "Search";
             this.searchCB.UseVisualStyleBackColor = true;
@@ -346,10 +381,11 @@
             this.PlayerDetails.Controls.Add(this.label2);
             this.PlayerDetails.Controls.Add(this.label1);
             this.PlayerDetails.Controls.Add(this.searchPlayer);
-            this.PlayerDetails.Location = new System.Drawing.Point(4, 22);
+            this.PlayerDetails.Location = new System.Drawing.Point(4, 29);
+            this.PlayerDetails.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PlayerDetails.Name = "PlayerDetails";
-            this.PlayerDetails.Padding = new System.Windows.Forms.Padding(3);
-            this.PlayerDetails.Size = new System.Drawing.Size(435, 368);
+            this.PlayerDetails.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PlayerDetails.Size = new System.Drawing.Size(656, 573);
             this.PlayerDetails.TabIndex = 0;
             this.PlayerDetails.Text = "Player Details";
             this.PlayerDetails.UseVisualStyleBackColor = true;
@@ -357,95 +393,106 @@
             // activities
             // 
             this.activities.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.activities.Location = new System.Drawing.Point(109, 113);
+            this.activities.Location = new System.Drawing.Point(164, 174);
+            this.activities.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.activities.Name = "activities";
             this.activities.ReadOnly = true;
             this.activities.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.activities.Size = new System.Drawing.Size(280, 244);
+            this.activities.Size = new System.Drawing.Size(418, 373);
             this.activities.TabIndex = 11;
             this.activities.Text = "";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(18, 113);
+            this.label6.Location = new System.Drawing.Point(27, 174);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 13);
+            this.label6.Size = new System.Drawing.Size(131, 20);
             this.label6.TabIndex = 10;
             this.label6.Text = "Recent Activities:";
             // 
             // cbLvl
             // 
-            this.cbLvl.Location = new System.Drawing.Point(109, 84);
+            this.cbLvl.Location = new System.Drawing.Point(164, 129);
+            this.cbLvl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbLvl.Name = "cbLvl";
             this.cbLvl.ReadOnly = true;
-            this.cbLvl.Size = new System.Drawing.Size(100, 20);
+            this.cbLvl.Size = new System.Drawing.Size(148, 26);
             this.cbLvl.TabIndex = 4;
             // 
             // skillLvl
             // 
-            this.skillLvl.Location = new System.Drawing.Point(109, 58);
+            this.skillLvl.Location = new System.Drawing.Point(164, 89);
+            this.skillLvl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.skillLvl.Name = "skillLvl";
             this.skillLvl.ReadOnly = true;
-            this.skillLvl.Size = new System.Drawing.Size(100, 20);
+            this.skillLvl.Size = new System.Drawing.Size(148, 26);
             this.skillLvl.TabIndex = 3;
             // 
             // name
             // 
-            this.name.Location = new System.Drawing.Point(109, 32);
+            this.name.Location = new System.Drawing.Point(164, 49);
+            this.name.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.name.Name = "name";
             this.name.ReadOnly = true;
-            this.name.Size = new System.Drawing.Size(100, 20);
+            this.name.Size = new System.Drawing.Size(148, 26);
             this.name.TabIndex = 2;
             // 
             // user
             // 
-            this.user.Location = new System.Drawing.Point(109, 6);
+            this.user.Location = new System.Drawing.Point(164, 9);
+            this.user.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.user.Name = "user";
-            this.user.Size = new System.Drawing.Size(100, 20);
+            this.user.Size = new System.Drawing.Size(148, 26);
             this.user.TabIndex = 0;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 87);
+            this.label4.Location = new System.Drawing.Point(51, 134);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 13);
+            this.label4.Size = new System.Drawing.Size(110, 20);
             this.label4.TabIndex = 8;
             this.label4.Text = "Combat Level:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 61);
+            this.label3.Location = new System.Drawing.Point(36, 94);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 13);
+            this.label3.Size = new System.Drawing.Size(121, 20);
             this.label3.TabIndex = 7;
             this.label3.Text = "Total Skill Level:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(70, 35);
+            this.label2.Location = new System.Drawing.Point(105, 54);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 13);
+            this.label2.Size = new System.Drawing.Size(55, 20);
             this.label2.TabIndex = 6;
             this.label2.Text = "Name:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 9);
+            this.label1.Location = new System.Drawing.Point(15, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 13);
+            this.label1.Size = new System.Drawing.Size(140, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Enter a username:";
             // 
             // searchPlayer
             // 
-            this.searchPlayer.Location = new System.Drawing.Point(215, 3);
+            this.searchPlayer.Location = new System.Drawing.Point(322, 5);
+            this.searchPlayer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.searchPlayer.Name = "searchPlayer";
-            this.searchPlayer.Size = new System.Drawing.Size(75, 23);
+            this.searchPlayer.Size = new System.Drawing.Size(112, 35);
             this.searchPlayer.TabIndex = 1;
             this.searchPlayer.Text = "Search";
             this.searchPlayer.UseVisualStyleBackColor = true;
@@ -454,21 +501,83 @@
             // runeTrackerTabs
             // 
             this.runeTrackerTabs.Controls.Add(this.PlayerDetails);
+            this.runeTrackerTabs.Controls.Add(this.questChecker);
             this.runeTrackerTabs.Controls.Add(this.cbTabPage);
             this.runeTrackerTabs.Controls.Add(this.clanInfo);
-            this.runeTrackerTabs.Location = new System.Drawing.Point(11, 12);
+            this.runeTrackerTabs.Location = new System.Drawing.Point(16, 18);
+            this.runeTrackerTabs.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.runeTrackerTabs.Name = "runeTrackerTabs";
             this.runeTrackerTabs.SelectedIndex = 0;
-            this.runeTrackerTabs.Size = new System.Drawing.Size(443, 394);
+            this.runeTrackerTabs.Size = new System.Drawing.Size(664, 606);
             this.runeTrackerTabs.TabIndex = 2;
+            // 
+            // questChecker
+            // 
+            this.questChecker.Controls.Add(this.label16);
+            this.questChecker.Controls.Add(this.questTable);
+            this.questChecker.Controls.Add(this.quest);
+            this.questChecker.Controls.Add(this.searchQC);
+            this.questChecker.Location = new System.Drawing.Point(4, 29);
+            this.questChecker.Name = "questChecker";
+            this.questChecker.Padding = new System.Windows.Forms.Padding(3);
+            this.questChecker.Size = new System.Drawing.Size(656, 573);
+            this.questChecker.TabIndex = 3;
+            this.questChecker.Text = "Quest Checker";
+            this.questChecker.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(15, 14);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(140, 20);
+            this.label16.TabIndex = 8;
+            this.label16.Text = "Enter a username:";
+            // 
+            // questTable
+            // 
+            this.questTable.AllowUserToAddRows = false;
+            this.questTable.AllowUserToOrderColumns = true;
+            this.questTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.questTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.questTable.Location = new System.Drawing.Point(8, 53);
+            this.questTable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.questTable.Name = "questTable";
+            this.questTable.ReadOnly = true;
+            this.questTable.RowHeadersWidth = 62;
+            this.questTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.questTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.questTable.Size = new System.Drawing.Size(640, 512);
+            this.questTable.TabIndex = 7;
+            // 
+            // quest
+            // 
+            this.quest.Location = new System.Drawing.Point(162, 11);
+            this.quest.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.quest.Name = "quest";
+            this.quest.Size = new System.Drawing.Size(148, 26);
+            this.quest.TabIndex = 5;
+            // 
+            // searchQC
+            // 
+            this.searchQC.Location = new System.Drawing.Point(322, 7);
+            this.searchQC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.searchQC.Name = "searchQC";
+            this.searchQC.Size = new System.Drawing.Size(112, 35);
+            this.searchQC.TabIndex = 6;
+            this.searchQC.Text = "Search";
+            this.searchQC.UseVisualStyleBackColor = true;
+            this.searchQC.Click += new System.EventHandler(this.SearchQC_Click);
             // 
             // RuneTracker
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 415);
+            this.ClientSize = new System.Drawing.Size(700, 638);
             this.Controls.Add(this.runeTrackerTabs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "RuneTracker";
             this.Text = "RuneTracker";
@@ -480,6 +589,9 @@
             this.PlayerDetails.ResumeLayout(false);
             this.PlayerDetails.PerformLayout();
             this.runeTrackerTabs.ResumeLayout(false);
+            this.questChecker.ResumeLayout(false);
+            this.questChecker.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.questTable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -526,6 +638,11 @@
         private System.Windows.Forms.DataGridView csvTable;
         private System.Windows.Forms.RichTextBox activities;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TabPage questChecker;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.DataGridView questTable;
+        private System.Windows.Forms.TextBox quest;
+        private System.Windows.Forms.Button searchQC;
     }
 }
 

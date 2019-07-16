@@ -4,6 +4,11 @@ using System.Net;
 using Newtonsoft.Json;
 using System.IO;
 using System.Data;
+using System.Collections.Generic;
+using System.ComponentModel;
+using Newtonsoft.Json.Linq;
+using System.Linq;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace RuneTrackerGUI
 {
@@ -36,7 +41,7 @@ namespace RuneTrackerGUI
                 string ptext = item.text;
 
                 int pos = activities.SelectionStart;
-                
+
                 activities.AppendText(pdate + Environment.NewLine);
                 activities.AppendText(pdetails + Environment.NewLine);
                 activities.AppendText(ptext + Environment.NewLine);
@@ -209,6 +214,12 @@ namespace RuneTrackerGUI
             }
             reader.Close();
             csvTable.DataSource = dt;
+        }
+
+        private void SearchQC_Click(object sender, EventArgs e)
+        {
+            string username = quest.Text;
+            string questList = (new WebClient()).DownloadString("https://apps.runescape.com/runemetrics/quests?user=" + username);
         }
     }
 }
