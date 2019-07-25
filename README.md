@@ -35,4 +35,4 @@ You can search for a clans name and it will output the folowing in a table:
 - Total XP
 - Number of Kills
 
-The binary can be found [here](https://github.com/HexEditHD/RuneTrackerGUI/blob/master/final/RuneTracker.exe).
+The binary can be found [here](https://github.com/HexEditHD/RuneTrackerGUI/blob/master/final/RuneTracker.exe?raw=true).
