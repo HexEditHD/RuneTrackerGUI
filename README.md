@@ -17,6 +17,7 @@ Search for a players username and it will output the folowing in a table:
 - If it is a members quest
 - How many quest points
 - If you have met the requirements to start the quest
+
 ### Combat level calculator
 Search for a players username and it will output the folowing:
 - Attack Level
@@ -28,6 +29,7 @@ Search for a players username and it will output the folowing:
 - Prayer Level
 - Summoning Level
 As well as the required levels needed to increase the combat level by 1
+
 ### Clan Information
 You can search for a clans name and it will output the folowing in a table:
 - The clanmates username
